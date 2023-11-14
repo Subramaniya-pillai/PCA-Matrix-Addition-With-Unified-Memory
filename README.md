@@ -1,25 +1,24 @@
-# PCA-Matrix-Addition-With-Unified-Memory
-## Aim:
+# EXPERIMENT 4: Matrix-Addition-With-Unified-Memory
+Refer to the program sumMatrixGPUManaged.cu. Would removing the memsets below affect 
+performance? If you can, check performance with nvprof or nvvp.
+## AIM
 To perform Matrix addition with unified memory and check its performance with nvprof.
-## Procedure:
-### Step1:
-Include the required files and library.
-### Step2:    
-Introduce a function named "initialData","sumMatrixOnHost","checkResult" to return the initialize the data , perform matrix summation on the host and then check the result.
-### Step3:    
-Create a grid 2D block 2D global function to perform matrix on the GPU.
-### Step4:    
-Declare the main function and set up the device & data size of matrix , perform memory allocation on host memory & initialize the data at host side then add matrix at host side for result checks followed by invoking kernel at host side. Check the kernel error, and check device for results.Finally free the device global memory and reset device.
-### Step5:    
-Execute the program and run the terminal.
 
-## Program:
+## PROCEDURE
+1. Include the required files and library.
+2. Introduce a function named "initialData","sumMatrixOnHost","checkResult" to return the initialize the data , perform matrix summation on the host and then check the result.
+3. Create a grid 2D block 2D global function to perform matrix on the GPU.
+4. Declare the main function and set up the device & data size of matrix , perform memory allocation on host memory & initialize the data at host side then add matrix at host side for result checks followed by invoking kernel at host side. Check the kernel error, and check device for results.Finally free the device global memory and reset device.
+5. Execute the program and run the terminal.
 
-> Developed by: Subramaniya Pillai B
+## Program
+```
+Developed by: Subramaniya Pillai B
+Register number: 212221230109
 
-> Register number: 212221230109
-### With Memset:
-```python
+```
+### With Memset
+```cuda
 %%cu
 #include <cuda_runtime.h>
 #include <stdio.h>
@@ -247,8 +246,8 @@ int main(int argc, char **argv)
     return (0);
 }
 ```
-### Without Memset:
-```python
+### Without Memset
+```cuda
 %%cu
 #include <cuda_runtime.h>
 #include <stdio.h>
@@ -481,10 +480,16 @@ int main(int argc, char **argv)
 }
 
 ```
-## Output:
-### With Memset:
-![Alt text](i1.png)
-### Without Memset:
-![Alt text](i2.png)
-## Result:
+##  OUTPUT
+### With Memset
+
+![image](https://github.com/Subramaniya-pillai/PCA-Matrix-Addition-With-Unified-Memory/assets/94166127/8afe16ad-87ec-4ea9-b770-798d419643de)
+
+
+### Without Memset
+
+![image](https://github.com/Subramaniya-pillai/PCA-Matrix-Addition-With-Unified-Memory/assets/94166127/857647d4-77cc-496f-804b-37952c241a9b)
+
+
+## RESULT
 Thus Matrix addition with unified memory is done successfully.
